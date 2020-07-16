@@ -1,28 +1,43 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div id="app" :class="{ light: theme === 'light', dark: theme === 'dark' }">
+    <p>{{ this.theme }} theme</p>
+    <button @click="toggleTheme">Toggle Theme</button>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-
 export default {
-  name: "App",
-  components: {
-    HelloWorld
-  }
-};
+  name: 'App',
+  data() {
+    return {
+      theme: 'light',
+    }
+  },
+  methods: {
+    toggleTheme() {
+      if (this.theme === 'light') {
+        this.theme = 'dark'
+      } else {
+        this.theme = 'light'
+      }
+    },
+  },
+}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+#app.light {
+  --bg-color: white;
+  --text-color: black;
+}
+
+#app.dark {
+  --bg-color: black;
+  --text-color: white;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: var(--text-color);
+  background-color: var(--bg-color);
 }
 </style>

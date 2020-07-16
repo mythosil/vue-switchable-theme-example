@@ -1,24 +1,7 @@
-# vue-themes-example
+# vue-switchable-themes-example
 
-## Project setup
-```
-yarn install
-```
+To show how to implement switchable theme function with Vue.
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+This implementation uses CSS Variables which is not supported by IE.
+https://caniuse.com/#feat=css-variables
 
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
